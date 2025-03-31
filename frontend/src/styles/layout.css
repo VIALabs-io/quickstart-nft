@@ -1,0 +1,201 @@
+/**
+ * Layout Styles
+ * ============
+ * 
+ * This file contains styles for the main layout containers and structure.
+ */
+
+/* Main container */
+.bridge-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main bridge section */
+.bridge-main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+  flex: 1;
+}
+
+.bridge-card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 700px; /* Increased from 600px to accommodate wider content */
+  overflow: hidden;
+  transition: box-shadow var(--transition-normal);
+  position: relative;
+}
+
+.bridge-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+.bridge-form-container {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bridge footer with logo */
+.bridge-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.via-logo {
+  height: 20px;
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.via-logo:hover {
+  opacity: 1;
+}
+
+/* Info section and tabs */
+.bridge-info-section {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  transition: box-shadow var(--transition-normal);
+}
+
+.bridge-info-section:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.info-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.info-tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.tab {
+  padding: var(--space-md) var(--space-lg);
+  font-weight: 600;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.tab.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+.tab:hover:not(.active) {
+  color: var(--color-text);
+  border-bottom-color: var(--color-border);
+}
+
+.tab-content {
+  padding: var(--space-lg);
+}
+
+/* Activity Log - Console Style */
+.activity-log-section {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.console-log-container {
+  background-color: #1e293b;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  box-shadow: var(--shadow-md);
+  max-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.console-header {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-bottom: 1px solid #334155;
+}
+
+.console-content {
+  padding: var(--space-sm) 0;
+  overflow-y: auto;
+  flex: 1;
+  max-height: 160px;
+}
+
+.log-entry {
+  padding: var(--space-xs) var(--space-md);
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  border-bottom: 1px solid #334155;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.log-entry:last-child {
+  border-bottom: none;
+}
+
+.log-time {
+  color: #94a3b8;
+  margin-right: var(--space-sm);
+}
+
+.log-message {
+  color: #e2e8f0;
+}
+
+.console-message {
+  padding: var(--space-md);
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* Responsive adjustments for layout */
+@media (max-width: 768px) {
+  .bridge-form-container {
+    padding: var(--space-lg);
+  }
+  
+  .bridge-card {
+    border-radius: var(--radius-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .bridge-container {
+    padding: var(--space-md) var(--space-sm);
+  }
+  
+  .bridge-form-container {
+    padding: var(--space-md);
+  }
+}

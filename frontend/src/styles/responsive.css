@@ -1,0 +1,365 @@
+/**
+ * Responsive Styles
+ * ================
+ * 
+ * This file contains responsive design adjustments for different screen sizes.
+ * It complements the component-specific responsive styles with global adjustments.
+ */
+
+/* Large screens (default) */
+:root {
+  --container-padding: var(--space-lg);
+}
+
+/* Medium screens (tablets, small laptops) */
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: var(--space-md);
+  }
+  
+  .bridge-container {
+    max-width: 900px;
+  }
+  
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+  }
+}
+
+/* Small screens (tablets, large phones) */
+@media (max-width: 768px) {
+  :root {
+    --container-padding: var(--space-md);
+  }
+  
+  .bridge-container {
+    padding: var(--space-md) var(--space-md);
+  }
+  
+  /* Header adjustments */
+  .bridge-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+  
+  .wallet-section {
+    width: 100%;
+  }
+  
+  .wallet-connect-container {
+    width: 100%;
+  }
+  
+  .connect-wallet-button {
+    width: 100%;
+  }
+  
+  .wallet-connected {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  /* Network selection adjustments */
+  .network-selection {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+  
+  .network-switcher {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  .network-switcher:hover {
+    transform: translate(-50%, -50%) rotate(90deg) scale(1.1);
+  }
+  
+  /* Tab adjustments */
+  .info-tabs {
+    overflow-x: auto;
+  }
+  
+  .tab {
+    padding: var(--space-sm) var(--space-md);
+    white-space: nowrap;
+  }
+  
+  /* NFT Gallery adjustments */
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-md);
+  }
+  
+  .nft-gallery-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+  
+  .nft-gallery-header .mint-button {
+    align-self: stretch;
+    justify-content: center;
+    margin-top: var(--space-xs);
+  }
+  
+  /* Keep NFT info items on one line */
+  .nft-details {
+    padding: var(--space-sm) var(--space-xs);
+  }
+  
+  .nft-info-item {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .nft-info-label {
+    margin-bottom: 0;
+    min-width: 50px;
+    font-size: 0.8rem;
+  }
+  
+  .nft-info-value {
+    font-size: 0.8rem;
+  }
+  
+  /* Bridge modal adjustments */
+  .bridge-networks {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--space-md);
+  }
+  
+  .bridge-network {
+    margin: 0;
+  }
+  
+  .bridge-direction {
+    margin: 0 var(--space-sm);
+    font-size: 1.2rem;
+  }
+  
+  .bridge-networks-row {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .bridge-network-select {
+    width: 100%;
+  }
+  
+  .network-select {
+    width: 100%;
+  }
+  
+  .bridge-network-select label {
+    font-size: 0.8rem;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .network-card-logo {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+  :root {
+    --container-padding: var(--space-sm);
+  }
+  
+  .bridge-container {
+    padding: var(--space-md) var(--space-sm);
+  }
+  
+  .bridge-header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .bridge-form-container {
+    padding: var(--space-md);
+  }
+  
+  .source-network, .destination-network {
+    padding: var(--space-sm);
+  }
+  
+  .token-amount-input {
+    font-size: 1rem;
+  }
+  
+  .token-symbol-display {
+    padding: 0 var(--space-sm);
+    min-width: 60px;
+  }
+  
+  .bridge-button {
+    font-size: 0.95rem;
+  }
+  
+  .bridge-modal-content {
+    padding: var(--space-md);
+  }
+  
+  .bridge-modal-header,
+  .bridge-modal-footer {
+    padding: var(--space-md);
+  }
+  
+  .network-logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .bridge-direction {
+    margin: 0 var(--space-md);
+  }
+  
+  /* NFT Gallery adjustments */
+  .nft-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-sm);
+  }
+  
+  .nft-details {
+    padding: var(--space-sm);
+  }
+  
+  .nft-name {
+    font-size: 0.95rem;
+  }
+  
+  .nft-info-item {
+    font-size: 0.8rem;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .nft-bridge-button {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.8rem;
+  }
+  
+  .network-select-trigger {
+    font-size: 0.85rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
+  
+  .network-option {
+    padding: var(--space-xs) var(--space-sm);
+  }
+  
+  .network-option-name {
+    font-size: 0.85rem;
+  }
+  
+  .network-option-balance {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tiny screens */
+@media (max-width: 360px) {
+  .bridge-container {
+    padding: var(--space-sm) var(--space-xs);
+  }
+  
+  .bridge-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .bridge-form-container {
+    padding: var(--space-sm);
+  }
+  
+  .token-amount-container,
+  .recipient-input {
+    padding: var(--space-sm);
+  }
+  
+  .token-amount-input {
+    padding: var(--space-sm);
+    font-size: 0.95rem;
+  }
+  
+  .token-symbol-display {
+    min-width: 50px;
+    font-size: 0.9rem;
+  }
+  
+  .bridge-button {
+    padding: var(--space-sm);
+    font-size: 0.9rem;
+  }
+  
+  /* NFT Gallery adjustments */
+  .nft-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .nft-card {
+    max-width: 100%;
+  }
+}
+
+/* Height-based adjustments */
+@media (max-height: 700px) {
+  .bridge-modal {
+    max-height: 95vh;
+  }
+  
+  .bridge-modal-content {
+    padding: var(--space-md);
+  }
+  
+  .bridge-networks {
+    margin-bottom: var(--space-md);
+  }
+  
+  .status-step {
+    margin-bottom: var(--space-sm);
+  }
+}
+
+/* Print styles */
+@media print {
+  .bridge-container {
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .bridge-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .connect-wallet-button,
+  .bridge-button,
+  .modal-close-button {
+    display: none;
+  }
+}
+
+/* Dark mode support (if implemented in the future) */
+@media (prefers-color-scheme: dark) {
+  /* These styles will only apply if the app implements dark mode */
+  /* For now, they're commented out as the app doesn't have dark mode yet */
+  /*
+  :root {
+    --color-bg: #0f172a;
+    --color-bg-card: #1e293b;
+    --color-bg-input: #334155;
+    --color-text: #e2e8f0;
+    --color-text-light: #94a3b8;
+    --color-text-dark: #f8fafc;
+    --color-border: #334155;
+  }
+  */
+}

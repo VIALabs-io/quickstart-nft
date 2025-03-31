@@ -1,0 +1,40 @@
+{
+  "name": "quickstart-token-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ethers": "^6.13.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "start": "vite --port 5000",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.5.3",
+    "vite": "^6.2.3"
+  }
+}

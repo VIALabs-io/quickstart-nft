@@ -1,0 +1,35 @@
+{
+  "name": "quickstart-token",
+  "version": "1.0.0",
+  "description": "A lightweight ethers v6 example of an ERC20 cross-chain token",
+  "main": "index.js",
+  "scripts": {
+    "compile": "solcjs --bin --abi --include-path node_modules/ --base-path . -o ./build contracts/MyERC20.sol",
+    "deploy:fuji": "node scripts/deploy.js fuji",
+    "deploy:sepolia": "node scripts/deploy.js sepolia",
+    "configure:fuji": "node scripts/configure.js fuji",
+    "configure:sepolia": "node scripts/configure.js sepolia",
+    "balance:fuji": "node scripts/getBalance.js fuji",
+    "balance:sepolia": "node scripts/getBalance.js sepolia",
+    "bridge:fuji-to-sepolia": "node scripts/bridge.js fuji sepolia",
+    "bridge:sepolia-to-fuji": "node scripts/bridge.js sepolia fuji",
+    "frontend": "cd frontend && npm start"
+  },
+  "keywords": [
+    "ethereum",
+    "erc20",
+    "cross-chain",
+    "via",
+    "ethers"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.3",
+    "@vialabs-io/npm-contracts": "github:VIALabs-io/npm-contracts",
+    "@vialabs-io/npm-registry": "github:VIALabs-io/npm-registry",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0",
+    "solc": "0.8.17"
+  }
+}

@@ -1,0 +1,312 @@
+/**
+ * Network Selection Styles
+ * =======================
+ * 
+ * This file contains styles for the network selection components.
+ */
+
+/* Network selection */
+.network-selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-bottom: var(--space-xl);
+  position: relative;
+  gap: var(--space-lg);
+}
+
+.source-network, .destination-network {
+  flex: 1;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-normal);
+  position: relative;
+  min-width: 240px; /* Ensure minimum width */
+  width: 100%; /* Take full available width */
+}
+
+/* Set different z-index values for source and destination to prevent overlap */
+.source-network {
+  z-index: 3; /* Higher z-index for source network */
+}
+
+.destination-network {
+  z-index: 2; /* Lower z-index for destination network */
+}
+
+.source-network:hover, .destination-network:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.source-network h3, .destination-network h3 {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-md);
+  font-weight: 500;
+}
+
+/* Network switcher removed */
+
+.network-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.network-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.network-info {
+  flex: 1;
+}
+
+.network-name {
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-dark);
+}
+
+.balance-display {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.chain-balance {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-bg-input);
+  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color var(--transition-fast);
+  min-height: 40px; /* Ensure consistent height */
+  width: 100%; /* Full width */
+}
+
+.chain-balance:hover {
+  background-color: rgba(241, 245, 249, 0.7);
+}
+
+.balance-label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  white-space: nowrap; /* Prevent wrapping */
+  margin-right: var(--space-sm);
+}
+
+.balance-amount {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 600;
+  white-space: nowrap; /* Prevent wrapping */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.connect-prompt-mini {
+  font-size: 0.9rem;
+  color: var(--color-text-lighter);
+  text-align: center;
+  padding: var(--space-sm) 0;
+}
+
+/* Custom Network Selector */
+.network-selector-container {
+  width: 100%;
+  margin-bottom: var(--space-md);
+  position: relative;
+}
+
+.network-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xs);
+  font-weight: 500;
+}
+
+/* Custom select trigger */
+.network-select-trigger {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-card);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  user-select: none;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 42px; /* Ensure consistent height */
+}
+
+.network-select-trigger:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+
+.network-select-trigger:hover {
+  border-color: var(--color-primary-light);
+}
+
+.network-select-trigger::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform var(--transition-fast);
+  margin-left: var(--space-sm);
+}
+
+.network-select-trigger.open::after {
+  transform: rotate(180deg);
+}
+
+/* Selected network display */
+.selected-network-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.network-icon-small {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.network-icon-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Dropdown options */
+.network-select-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  z-index: 20; /* Higher z-index to ensure it appears above all other elements */
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  animation: slide-in-top 0.2s ease-out forwards;
+}
+
+.network-select-dropdown.open {
+  display: block;
+}
+
+.network-option {
+  padding: var(--space-sm) var(--space-md);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.network-option:last-child {
+  border-bottom: none;
+}
+
+.network-option:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.network-option.selected {
+  background-color: var(--color-primary-bg);
+}
+
+.network-option-content {
+  flex: 1;
+}
+
+.network-option-name {
+  font-weight: 500;
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.network-option-balance {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+/* Placeholder for empty state */
+.network-select-placeholder {
+  color: var(--color-text-lighter);
+}
+
+/* Hide native select for accessibility */
+.network-select-native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Responsive adjustments for network selection */
+@media (max-width: 768px) {
+  .network-selection {
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .source-network, .destination-network {
+    padding: var(--space-sm);
+  }
+  
+  .network-selection {
+    gap: var(--space-lg);
+  }
+}

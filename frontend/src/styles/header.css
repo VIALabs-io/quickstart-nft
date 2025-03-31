@@ -1,0 +1,104 @@
+/**
+ * Header Styles
+ * ============
+ * 
+ * This file contains styles for the application header.
+ */
+
+/* Header styles */
+.bridge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+}
+
+.bridge-header h1 {
+  color: var(--color-text-dark);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.powered-by {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-top: var(--space-xs);
+}
+
+/* Desktop layout */
+@media (min-width: 769px) {
+  .bridge-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+    flex-wrap: nowrap;
+  }
+  
+  .wallet-section {
+    width: auto;
+  }
+  
+  .wallet-section h1 {
+    display: none;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .bridge-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding-bottom: var(--space-md);
+    flex-wrap: nowrap;
+  }
+  
+  .title-wrapper {
+    display: none;
+  }
+  
+  .wallet-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .wallet-section h1 {
+    font-size: 1rem;
+    white-space: nowrap;
+    margin-right: var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .bridge-header {
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .wallet-section h1 {
+    font-size: 0.9rem;
+  }
+  
+  .powered-by {
+    font-size: 0.75rem;
+  }
+}
