@@ -24,15 +24,11 @@ npm install
 cp .env.example .env
 ```
 
-Make sure your private key is correct in the .env file and has testnet tokens for both networks.
-
 ## Step 2: Deploy Your NFT
 
 ```bash
 node scripts/deploy.js
 ```
-
-The MyNFT contract is deployed to all configured networks, an initial NFT is minted on each network, and cross-chain messaging is configured automatically.
 
 ## Step 3: Bridge NFTs Between Networks
 
@@ -40,18 +36,11 @@ The MyNFT contract is deployed to all configured networks, an initial NFT is min
 # List NFTs on Avalanche Testnet
 node scripts/bridge.js avalanche-testnet
 
-# Bridge NFT #100001 from Avalanche Testnet to Base Testnet
-node scripts/bridge.js avalanche-testnet base-testnet 100001
-```
-
-You can also specify a recipient address:
-```bash
-node scripts/bridge.js avalanche-testnet base-testnet 100001 0x1234...
+# Bridge NFT #431130000 from Avalanche Testnet to Base Testnet
+node scripts/bridge.js avalanche-testnet base-testnet 431130000
 ```
 
 ## Step 4: Use the Frontend
-
-The project includes a React-based frontend for interacting with your NFTs:
 
 ```bash
 # Start the frontend
@@ -60,18 +49,11 @@ npm install
 npm run dev
 ```
 
-The frontend allows you to:
-- Connect your wallet
-- View your NFTs on different networks
-- Mint new NFTs
-- Bridge NFTs between networks
-- Monitor cross-chain events
-
 🎉 Congratulations! You've successfully created and used a cross-chain NFT.
 
-## Adding More Networks
+# Adding More Networks
 
-### Step 1: Edit Network Configuration
+## Step 1: Edit Network Configuration
 
 Edit the network.config.js file and add new network configurations:
 
@@ -116,10 +98,8 @@ const networks = {
 };
 ```
 
-### Step 2: Deploy
+## Step 2: Deploy
 
 ```bash
 node scripts/deploy.js
 ```
-
-This will deploy to any new networks and reconfigure cross-chain messaging between all networks. The frontend supports hot-reloading and will automatically detect the new network configurations.
